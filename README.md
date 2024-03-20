@@ -30,4 +30,4 @@ python -m unittest Tests\test_priority_queue.py Tests\test_client.py Tests\test_
 
 ## Demo
 
-[demo.webm](https://github.com/SpyrosMitsis/data_structure_assigment_1/blob/main/demo.webm)
+![demo.webm](https://github.com/SpyrosMitsis/data_structure_assigment_1/blob/main/demo.webm)
