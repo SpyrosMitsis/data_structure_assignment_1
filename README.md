@@ -28,3 +28,6 @@ To run the unit tests in the terminal simply use this command:
 python -m unittest Tests\test_priority_queue.py Tests\test_client.py Tests\test_server.py     
 ```
 
+## Demo
+
+[demo.webm](https://github.com/SpyrosMitsis/data_structure_assigment_1/blob/main/demo.webm)
