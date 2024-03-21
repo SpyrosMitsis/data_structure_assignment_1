@@ -8,15 +8,19 @@ This repository contains Python code for simulating an airport's air traffic con
 To run the simulation both files need to be executed at the same time. 
 Simply execute these two commands in two separate terminals
 
+The server file receives plane requests and gives them permission to take action:
+```bash
+python server.py
+
+```
 The client file sends plane requests:
 ```bash
 python client.py
 ```
+### Note
 
-The server file receives plane requests and gives them permission to take action:
-```bash
-python server.py
-```
+If the client is run 
+
 
 
 ## Running Unit Tests

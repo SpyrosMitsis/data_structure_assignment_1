@@ -49,20 +49,29 @@ async def send_planes() -> None:
     random.seed(42)
     uri = "ws://localhost:7890"
 
-    async with websockets.connect(uri) as websocket:
-        while True:
-            await asyncio.sleep(random.uniform(0.6, 1))
-            request_type = random.choice(["landing", "takeoff", "emergency"])
-            flight_code = generate_flight_code()
-            plane = Plane(flight_code, request_type)
+    while True:
+        try:
+            async with websockets.connect(uri, timeout=5) as websocket:
+                while True:
+                    await asyncio.sleep(random.uniform(0.6, 1))
+                    request_type = random.choice(["landing", "takeoff", "emergency"])
+                    flight_code = generate_flight_code()
+                    plane = Plane(flight_code, request_type)
 
-            plane_data = {
-                "flight_code": plane.flight_code,
-                "type": plane.plane_type
-            }
-            await websocket.send(json.dumps(plane_data))
-            print(f"Sending {plane}")
+                    plane_data = {
+                        "flight_code": plane.flight_code,
+                        "type": plane.plane_type
+                    }
+                    await websocket.send(json.dumps(plane_data))
+                    print(f"Sending {plane}")
 
+        except asyncio.TimeoutError:
+            print("Connection timed out. Retrying...")
+            await asyncio.sleep(5)  # Wait for a while before retrying
+
+        except ConnectionRefusedError:
+            print("Connection Refused...\nIs the server running?")
+            return
 
 if __name__ == '__main__':
     asyncio.run(send_planes())
