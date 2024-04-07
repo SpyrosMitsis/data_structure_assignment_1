@@ -17,14 +17,10 @@ The client file sends plane requests:
 ```bash
 python client.py
 ```
-### Note
-
-If the client is run 
-
 
 
 ## Running Unit Tests
-To run the tests with vs code simply go the `Testing` badge in the activity bar.
+To run the tests with vs code simply go to the `Testing` badge in the activity bar.
 
 To run the unit tests in the terminal simply use this command:
 

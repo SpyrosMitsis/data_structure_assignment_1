@@ -5,6 +5,7 @@ import json
 import string
 from plane import Plane
 
+
 def generate_flight_code() -> str:
     """
     Generate a random flight code in the format 'XX1234', where 'XX' are two random uppercase letters
@@ -25,7 +26,6 @@ def generate_flight_code() -> str:
 
 
 
-async def send_planes() -> None:
     """Generate and send plane data via WebSocket.
 
     This function establishes a WebSocket connection to a specified URI and
@@ -46,6 +46,9 @@ async def send_planes() -> None:
         ConnectionRefusedError: If the connection to the WebSocket server fails.
 
     """
+
+async def send_planes() -> None:
+
     random.seed(42)
     uri = "ws://localhost:7890"
 
