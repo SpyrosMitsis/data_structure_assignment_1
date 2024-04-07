@@ -24,7 +24,7 @@ def generate_flight_code() -> str:
     return flight_code
 
 
-
+async def send_planes() -> None:
 
     """Generate and send plane data via WebSocket.
 
@@ -47,7 +47,7 @@ def generate_flight_code() -> str:
 
     """
 
-async def send_planes() -> None:
+
 
     random.seed(42)
     uri = "ws://localhost:7890"
